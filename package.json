@@ -4,9 +4,11 @@
   "version": "2.0.1",
   "description": "A postcss plugin to remap and transform selectors.",
   "license": "Apache-2.0",
-  "author": "Larry Davis <lazdnet@gmail.com>",
-  "contributors": [
+  "maintainers": [
     "Cassondra Roberts <castastrophe@users.noreply.github.com> (https://allons-y.llc)"
+  ],
+  "contributors": [
+    "Larry Davis <lazdnet@gmail.com>"
   ],
   "repository": {
     "type": "git",
@@ -20,13 +22,14 @@
     "index.js"
   ],
   "engines": {
-    "node": ">=14 <=18"
+    "node": ">=20"
   },
   "scripts": {
-    "prepare": "husky install",
-    "test": "ava",
     "coverage": "c8 yarn test",
-    "semantic-release": "semantic-release"
+    "prepare": "husky install",
+    "prepublishOnly": "yarn test",
+    "semantic-release": "semantic-release",
+    "test": "ava"
   },
   "funding": [
     {
@@ -41,11 +44,11 @@
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^17.7.0",
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/commit-analyzer": "^11.1.0",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.1.0",
-    "@semantic-release/npm": "^10.0.4",
-    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^12.1.0",
     "ava": "^5.3.1",
     "c8": "^8.0.1",
     "husky": "^8.0.3",
@@ -53,7 +56,7 @@
     "postcss": "^8.4.31",
     "prettier": "^2.8.8",
     "prettier-package-json": "^2.8.0",
-    "semantic-release": "^23.0.0"
+    "semantic-release": "^23.0.2"
   },
   "lint-staged": {
     "*.js": [
